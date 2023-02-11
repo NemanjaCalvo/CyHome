@@ -1,4 +1,4 @@
-const locators = require("../fixtures/locators.json");
+import { registerPage } from "../page_object/registerPage";
 
 describe("describe test", () => {
   let userData = {
@@ -8,19 +8,83 @@ describe("describe test", () => {
     pass: "nemanja94",
   };
 
+  let userData1 = {
+    firstName: " ",
+    lastName: "Bajic",
+    email: "bajkerNe@gmail.com",
+    pass: "nemanja94",
+  };
+
+  let userData2 = {
+    firstName: "Nemus",
+    lastName: " ",
+    email: "bajkerNe@gmail.com",
+    pass: "nemanja94",
+  };
+
+  let userData3 = {
+    firstName: "Nemus",
+    lastName: "Bajic",
+    email: " ",
+    pass: "nemanja94",
+  };
+
+  let userData4 = {
+    firstName: "Nemus",
+    lastName: "Bajic",
+    email: "bajkerNe@gmail.com",
+    pass: " ",
+  };
+
   beforeEach("visit app and click on register link", () => {
     cy.visit("https://gallery-app.vivifyideas.com/");
-    cy.get(locators.navbar.registerButton).click();
+    registerPage.registerLink.click();
   });
+
   it("register test", () => {
-    // cy.visit("https://gallery-app.vivifyideas.com/");
-    // cy.get(locators.navbar.registerButton).click();
-    cy.get(locators.register.firsName).type(userData.firstName);
-    cy.get(locators.register.lastName).type(userData.lastName);
-    cy.get(locators.common.emailInput).type(userData.email);
-    cy.get(locators.common.passwordInput).type(userData.pass);
-    cy.get(locators.register.passConfig).type(userData.pass);
-    cy.get(locators.register.checkbox).click();
-    cy.get(locators.common.submitButton).click();
+    registerPage.registerData(
+      // cy.visit("https://gallery-app.vivifyideas.com/");
+      // cy.get(locators.navbar.registerButton).click();
+      userData.firstName,
+      userData.lastName,
+      userData.email,
+      userData.pass
+    );
+  });
+
+  it("register without first name", () => {
+    registerPage.registerData(
+      userData1.firstName,
+      userData1.lastName,
+      userData1.email,
+      userData1.pass
+    );
+  });
+
+  it("register without last name", () => {
+    registerPage.registerData(
+      userData2.firstName,
+      userData2.lastName,
+      userData2.email,
+      userData2.pass
+    );
+  });
+
+  it("register without email", () => {
+    registerPage.registerData(
+      userData3.firstName,
+      userData3.lastName,
+      userData3.email,
+      userData3.pass
+    );
+  });
+
+  it("register without pass", () => {
+    registerPage.registerData(
+      userData4.firstName,
+      userData4.lastName,
+      userData4.email,
+      userData4.pass
+    );
   });
 });

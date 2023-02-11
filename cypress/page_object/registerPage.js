@@ -20,18 +20,18 @@ class RegisterPage {
   }
 
   get passConfInput() {
-    return cy.get("password-confirmation");
+    return cy.get("#password-confirmation");
   }
 
   get tosChecbox() {
-    return cy.get("button");
+    return cy.get(".form-check-input");
   }
 
   get submitBtn() {
     return cy.get("button");
   }
 
-  registerWithValidData(firstName, lastName, email, password) {
+  registerData(firstName, lastName, email, password) {
     this.firstName.type(firstName);
     this.lastName.type(lastName);
     this.emailInput.type(email);
