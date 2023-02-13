@@ -1,30 +1,27 @@
 class AllGalleries {
-  get AllGalleriesLink() {
+  get allGalleriesLink() {
     return cy.get("a[href='/']");
   }
 
-  get searchForGallery() {
+  get searchInput() {
     return cy.get(".form-control");
   }
 
-  get submitSearch() {
+  get searchSubmitButton() {
     return cy.get(".btn");
   }
 
   get getToSpecifiedGallery() {
-    return cy.get("a[href='/galleries/703']");
+    return cy.get(".box-title");
   }
 
   get commentGallery() {
     return cy.get("textarea");
   }
 
-  allGalleries(formControl, textarea) {
-    this.AllGalleriesLink.click();
-    this.searchForGallery.type(formControl);
-    this.submitSearch.click();
-    this.getToSpecifiedGallery.click();
-    this.commentGallery.type(textarea);
+  allGalleries(formControl) {
+    this.searchInput.type(formControl);
+    this.searchSubmitButton.click();
   }
 }
 
