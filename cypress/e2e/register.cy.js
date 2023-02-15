@@ -1,11 +1,12 @@
 import { registerPage } from "../page_object/registerPage";
+import { faker } from "@faker-js/faker";
 
 describe("describe test", () => {
   let userData = {
-    firstName: "Nemus",
-    lastName: "Bajic",
-    email: "bajkerNe@gmail.com",
-    pass: "nemanja94",
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+    email: faker.internet.email(),
+    pass: faker.lorem.word(8) + 1,
   };
 
   let userData1 = {

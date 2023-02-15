@@ -2,6 +2,9 @@ class CreateGallery {
   get createGalleryLink() {
     return cy.get("a[href='/create']");
   }
+  get createGalleryHeading() {
+    return cy.get;
+  }
   get galleryNameInput() {
     return cy.get("#title");
   }
@@ -15,7 +18,7 @@ class CreateGallery {
     return cy.get("button").eq(-3);
   }
   get submitBtn() {
-    return cy.get(".btn");
+    return cy.get("button").eq(-1);
   }
 
   createGallery(galleryName, galleryDescription, imgUrl) {
@@ -23,7 +26,7 @@ class CreateGallery {
     this.galleryNameInput.type(galleryName);
     this.galleryDescription.type(galleryDescription);
     this.imgUrl.type(imgUrl);
-    this.addImageBtn.click();
+    // this.addImageBtn.click();
     this.submitBtn.click();
   }
 }
