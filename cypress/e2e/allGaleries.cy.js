@@ -60,6 +60,9 @@ describe("all galleries page test", () => {
       .should("be.visible")
       .and("have.css", "opacity", "0.5");
     allGalleries.slideToNextPicture.dblclick();
+    allGalleries.slideToPreviousPicture
+      .should("be.visible")
+      .and("have.css", "opacity", "1");
     allGalleries.slideToPreviousPicture.click();
     // allGalleries.commentPlaceholder.find("textarea").click();
     allGalleries.commentPlaceholder
