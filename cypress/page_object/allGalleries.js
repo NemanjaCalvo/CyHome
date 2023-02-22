@@ -35,11 +35,11 @@ class AllGalleries {
     return cy.get(".box-title");
   }
 
-  get slideToNextPicture() {
+  get carouselNextButton() {
     return cy.get(".carousel-control-next");
   }
 
-  get slideToPreviousPicture() {
+  get carouselPreviousButton() {
     return cy.get(".carousel-control-prev-icon");
   }
 

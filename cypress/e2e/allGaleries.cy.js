@@ -56,14 +56,14 @@ describe("all galleries page test", () => {
       .and("have.css", "color", "rgb(72, 73, 75)")
       .and("have.css", "text-align", "center")
       .and("have.css", "font-weight", "900");
-    allGalleries.slideToNextPicture
+    allGalleries.carouselNextButton
       .should("be.visible")
       .and("have.css", "opacity", "0.5");
-    allGalleries.slideToNextPicture.dblclick();
-    allGalleries.slideToPreviousPicture
+    allGalleries.carouselNextButton.dblclick();
+    allGalleries.carouselPreviousButton
       .should("be.visible")
       .and("have.css", "opacity", "1");
-    allGalleries.slideToPreviousPicture.click();
+    allGalleries.carouselPreviousButton.click();
     // allGalleries.commentPlaceholder.find("textarea").click();
     allGalleries.commentPlaceholder
       .should("exist")

@@ -2,9 +2,6 @@ class CreateGallery {
   get createGalleryLink() {
     return cy.get("a[href='/create']");
   }
-  get createGalleryHeading() {
-    return cy.get;
-  }
   get galleryNameInput() {
     return cy.get("#title");
   }

@@ -1,6 +1,6 @@
 import { registerPage } from "../page_object/registerPage";
 import { faker } from "@faker-js/faker";
-
+import { loginPage } from "../page_object/loginPage";
 describe("describe test", () => {
   let userData = {
     firstName: faker.name.firstName(),
@@ -87,5 +87,16 @@ describe("describe test", () => {
       userData4.email,
       userData4.pass
     );
+  });
+
+  it.only("register throught back", () => {
+    cy.registerViaBack(
+      userData.firstName,
+      userData.lastName,
+      userData.email,
+      userData.pass
+    );
+    cy.visit("/login");
+    loginPage.login(userData.email, userData.pass);
   });
 });

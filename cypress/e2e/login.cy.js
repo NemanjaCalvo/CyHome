@@ -7,8 +7,7 @@ describe("describe test", () => {
   };
 
   before("visit app and click on login link", () => {
-    cy.visit("https://gallery-app.vivifyideas.com/");
-    cy.get(locators.navbar.loginButton).click();
+    cy.loginViaBack();
   });
   it("login test", () => {
     // cy.visit("https://gallery-app.vivifyideas.com/");
