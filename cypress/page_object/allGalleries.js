@@ -59,7 +59,7 @@ class AllGalleries {
     return cy.get(".form-group");
   }
 
-  get commentPlaceholder() {
+  get commentingTextArea() {
     return this.commentSection.find("textarea");
   }
 
